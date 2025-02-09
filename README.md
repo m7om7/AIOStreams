@@ -65,7 +65,7 @@ It also means you only have to install one addon instead of configuring multiple
 Furthermore, being able to apply a global filter and sort to all results means that you can get the best results from all sources displayed first,
 rather than having to check each addon individually.
 
-### What are the currently supported addons?
+### What are the currently supported addons??
 
 It currently supports:
 
