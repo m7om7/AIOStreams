@@ -384,7 +384,10 @@ export class AIOStreams {
     // then apply our this.config sorting
     filteredResults.sort((a, b) => {
       for (const sortByField of this.config.sortBy) {
-        const field = Object.keys(sortByField)[0];
+        const field = Object.keys(sortByField).find(
+          (key) => typeof sortByField[key] === 'boolean'
+        );
+        if (!field) continue;
         const value = sortByField[field];
 
         if (value) {
@@ -613,7 +616,7 @@ export class AIOStreams {
           ? `🎲 ${name}`
           : name,
       description: this.config.addonNameInDescription
-        ? `🎲 ${name}\n${description}`
+        ? `🎲 ${name.split('\n').join(' ')}\n${description}`
         : description,
       subtitles: parsedStream.stream?.subtitles,
       sources: parsedStream.torrent?.sources,

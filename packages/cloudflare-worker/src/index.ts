@@ -1,7 +1,7 @@
 import { AIOStreams, errorResponse, validateConfig } from '@aiostreams/addon';
 import manifest from '@aiostreams/addon/src/manifest';
 import { Config, StreamRequest } from '@aiostreams/types';
-import { Cache } from '@aiostreams/utils';
+import { Cache, unminifyConfig } from '@aiostreams/utils';
 
 const HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -54,15 +54,20 @@ export default {
       // handle /manifest.json and /:config/manifest.json requests
       if (components.includes('manifest.json')) {
         if (components.length === 1) {
-          return createJsonResponse(manifest(false));
+          return createJsonResponse(manifest());
         } else {
-          return createJsonResponse(manifest(true));
+          return createJsonResponse(manifest(undefined, true));
         }
       }
 
       if (components.includes('stream')) {
         // when /stream is requested without config
-        if (components.length !== 4) {
+        let config = components[0];
+        while (components.length > 4) {
+          config += `/${components.splice(1, 1)[0]}`;
+        }
+        config = decodeURIComponent(config);
+        if (components.length < 4) {
           return createJsonResponse(
             errorResponse(
               'You must configure this addon first',
@@ -71,14 +76,12 @@ export default {
             )
           );
         }
-
-        const config = components[0];
+        console.log(`Received /stream request with Config: ${config}`);
         const decodedPath = decodeURIComponent(url.pathname);
 
         const streamMatch = /stream\/(movie|series)\/([^/]+)\.json/.exec(
-          decodedPath.replace(`/${config}`, '')
+          decodedPath
         );
-
         if (!streamMatch) {
           let path = decodedPath.replace(`/${config}`, '');
           console.error(`Invalid request: ${path}`);
@@ -90,12 +93,13 @@ export default {
 
         let decodedConfig: Config;
 
-        if (config.startsWith('E-')) {
+        if (config.startsWith('E-') || config.startsWith('E2-')) {
           return createResponse('Encrypted Config Not Supported', 400);
         }
         try {
-          decodedConfig = JSON.parse(atob(config));
+          decodedConfig = unminifyConfig(JSON.parse(atob(config)));
         } catch (error: any) {
+          console.error(error);
           return createJsonResponse(
             errorResponse(
               'Unable to parse config, please reconfigure or create an issue on GitHub',
