@@ -49,13 +49,6 @@ if (!Settings.SECRET_KEY) {
   );
 }
 
-if (Settings.SECRET_KEY && Settings.SECRET_KEY.length !== 32) {
-  console.error(
-    '|ERR| server > init: SECRET_KEY must be 32 characters long, exiting...'
-  );
-  throw new Error('SECRET_KEY must be 32 characters long');
-}
-
 let CUSTOM_CONFIGS: Record<string, string> = {};
 if (Settings.CUSTOM_CONFIGS) {
   try {
@@ -123,7 +116,13 @@ app.get('/:config/configure', (req, res) => {
     );
   }
   try {
-    const configJson = encryptInfoInConfig(extractJsonConfig(config));
+    let configJson = extractJsonConfig(config);
+    if (config.startsWith('E-') || config.startsWith('E2-')) {
+      console.log(
+        `|DBG| server > Encrypted config detected, encrypting credentials`
+      );
+      configJson = encryptInfoInConfig(configJson);
+    }
     const base64Config = Buffer.from(JSON.stringify(configJson)).toString(
       'base64'
     );
@@ -566,7 +565,7 @@ function processObjectValues(
 }
 
 function encryptValue(value: any, label: string): any {
-  if (!isValueEncrypted(value)) {
+  if (value && !isValueEncrypted(value)) {
     try {
       const { iv, data } = encryptData(compressData(value));
       return `E2-${iv}-${data}`;
