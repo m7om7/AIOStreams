@@ -81,7 +81,7 @@ export const PARSE_REGEX = {
   languages: {
     Remux_T1: createLanguageRegex('Remux.*(3L|BiZKiT|BLURANiUM|CiNEPHiLES|FraMeSToR|PmP|ZQ)|-BMF|-WiLDCAT'),
     Remux_T2: createLanguageRegex('Remux.*(Flights|NCmt|playBD|SiCFoI|SURFINBIRD|TEPES|decibeL|EPSiLON|HiFi|KRaLiMaRKo|PTer|TRiToN)'),
-    Remux_T3: createLanguageRegex('Remux.*(ATELiER|iFT|NTb|PTP|SumVision|TOA'),
+    Remux_T3: createLanguageRegex('Remux.*(ATELiER|iFT|NTb|PTP|SumVision|TOA)'),
     Web_T1: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(ABBIE|AJP69|APEX|PAXA|PEXA|XEPA|BLUTONiUM|CasStudio|CMRG|CRFW|CRUD|CtrlHD|FLUX|GNOME|HONE|KiNGS|Kitsune|monkee|NOSiViD|NTb|NTG|QOQ|RTN|SiC|TEPES|T6D|TOMMY|ViSUM)'),
     Web_T2: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(3cTWeB|BTW|Cinefeel|CiT|Coo7|dB|DEEP|END|ETHiCS|FC|Flights|iJP|iKA|iT00NZ|JETIX|KHN|KiMCHI|LAZY|MiU|MZABI|NPMS|NYH|orbitron|PHOENiX|playWEB|PSiG|ROCCaT|RTFM|SA89|SbR|SDCC|SIGMA|SMURF|SPiRiT|TVSmash|WELP|XEBEC|4KBEC|CEBEX)'),
     Web_T3: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(BYNDR|DRACULA|GNOMiSSiON|NINJACENTRAL|ROCCaT|SiGMA|SLiGNOME|SwAgLaNdEr|T4H|ViSiON)'),
