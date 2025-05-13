@@ -79,7 +79,7 @@ export const PARSE_REGEX = {
     'H-SBS': createRegex('h?(alf)?[ .\\-_]?(sbs|side[ .\\-_]?by[ .\\-_]?side)'),
   },
   languages: {
-    Web_T1: createLanguageRegex('WEB[-_.]?(?:DL|RIP)\b.*\b(ABBIE|AJP69|APEX|PAXA|PEXA|XEPA|BLUTONiUM|CasStudio|CMRG|CRFW|CRUD|CtrlHD|FLUX|GNOME|HONE|KiNGS|Kitsune|monkee|NOSiViD|NTb|NTG|QOQ|RTN|SiC|TEPES|T6D|TOMMY|ViSUM)'),
+    Web_T1: createLanguageRegex('WEB.*\b(ABBIE|AJP69|APEX|PAXA|PEXA|XEPA|BLUTONiUM|CasStudio|CMRG|CRFW|CRUD|CtrlHD|FLUX|GNOME|HONE|KiNGS|Kitsune|monkee|NOSiViD|NTb|NTG|QOQ|RTN|SiC|TEPES|T6D|TOMMY|ViSUM)'),
     Multi: createLanguageRegex('multi'),
     'Dual Audio': createLanguageRegex(
       'dual[ .\\-_]?(audio|lang(uage)?|flac|ac3|aac2?)'
