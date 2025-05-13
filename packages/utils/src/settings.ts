@@ -290,7 +290,7 @@ export const Settings = cleanEnv(process.env, {
     desc: 'Default regex include pattern',
   }),
   DEFAULT_REGEX_SORT_PATTERNS: multipleRegex({
-    default: Name1<::>.*1080p.*,
+    default: 'Name1<::>.*1080.*',
     desc: 'Default regex sort patterns',
   }),
 
