@@ -82,11 +82,14 @@ export const PARSE_REGEX = {
     Remux_T1: createLanguageRegex('Remux.*(3L|BiZKiT|BLURANiUM|CiNEPHiLES|FraMeSToR|PmP|ZQ)|-BMF|-WiLDCAT'),
     Remux_T2: createLanguageRegex('Remux.*(Flights|NCmt|playBD|SiCFoI|SURFINBIRD|TEPES|decibeL|EPSiLON|HiFi|KRaLiMaRKo|PTer|TRiToN)'),
     Remux_T3: createLanguageRegex('Remux.*(ATELiER|iFT|NTb|PTP|SumVision|TOA)'),
-    Web_T1: createLanguageRegex('^(?=.*\bWEB[-_.]?(?:DL|RIP)\b)(?=.*\b(?:ABBIE|AJP69|APEX|PAXA|PEXA|XEPA|BLUTONiUM|CasStudio|CMRG|CRFW|CRUD|CtrlHD|FLUX|GNOME|HONE|KiNGS|Kitsune|monkee|NOSiViD|NTb|NTG|QOQ|RTN|SiC|TEPES|T6D|TOMMY|ViSUM)\b).*'),
-    //Web_T1: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(ABBIE|AJP69|APEX|PAXA|PEXA|XEPA|BLUTONiUM|CasStudio|CMRG|CRFW|CRUD|CtrlHD|FLUX|GNOME|HONE|KiNGS|Kitsune|monkee|NOSiViD|NTb|NTG|QOQ|RTN|SiC|TEPES|T6D|TOMMY|ViSUM)'),
+    Bluray_T1: createLanguageRegex('Blu[-_]?Ray.*(BBQ|c0kE|Chotab|CRiSC|CtrlHD|Dariush|decibeL|D-Z0N3|DON|EbP|EDPH|Geek|LolHD|MainFrame|NCmt|NTb|PTer|TayTO|TDD|TnP|VietHD|ZoroSenpai|W4NK3R|ZQ)|-BMF'),
+    Bluray_T2: createLanguageRegex('Blu[-_]?Ray.*(EA|HiDt|HiSD|HQMUX|iFT|QOQ|SA89|sbR)'),
+    Bluray_T3: createLanguageRegex('Blu[-_]?Ray.*(ATELiER|BHDStudio|hallowed|HiFi|HONE|LoRD|SPHD|WEBDV|playHD)'),
+    Web_T1: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(ABBIE|AJP69|APEX|PAXA|PEXA|XEPA|BLUTONiUM|CasStudio|CMRG|CRFW|CRUD|CtrlHD|FLUX|GNOME|HONE|KiNGS|Kitsune|monkee|NOSiViD|NTb|NTG|QOQ|RTN|SiC|TEPES|T6D|TOMMY|ViSUM)'),
     Web_T2: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(3cTWeB|BTW|Cinefeel|CiT|Coo7|dB|DEEP|END|ETHiCS|FC|Flights|iJP|iKA|iT00NZ|JETIX|KHN|KiMCHI|LAZY|MiU|MZABI|NPMS|NYH|orbitron|PHOENiX|playWEB|PSiG|ROCCaT|RTFM|SA89|SbR|SDCC|SIGMA|SMURF|SPiRiT|TVSmash|WELP|XEBEC|4KBEC|CEBEX)'),
     Web_T3: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(BYNDR|DRACULA|GNOMiSSiON|NINJACENTRAL|ROCCaT|SiGMA|SLiGNOME|SwAgLaNdEr|T4H|ViSiON)'),
     Web_Scene: createLanguageRegex('WEB[-_.]?(?:DL|RIP).*(DEFLATE|INFLATE)'),
+    BAD: createLanguageRegex('SWTYBLZ|TeeWee|Will1869|24xHD|41RGB|4K4U|AROMA|aXXo|AZAZE|BARC0DE|BAUCKLEY|BdC|beAst|BTM|C1NEM4|C4K|CDDHD|CHAOS|CHD|CiNE|COLLECTiVE|CREATiVE24|CrEwSaDe|CTFOH|d3g|DDR|DNL|EPiC|EuReKA|FaNGDiNG0|Feranki1980|FGT|FMD|FRDS|FZHD|GalaxyRG|GHD|GPTHD|HDS|HDTime|HDWinG|iNTENSO|iPlanet|iVy|jennaortega|JFF|KC|KiNGDOM|KIRA|L0SERNIGHT|LAMA|Leffe|Liber8|LiGaS|LUCY|MarkII|MeGusta|mHD|mSD|MTeam|MySiLU|NhaNc3|nHD|nikt0|nSD|OFT|Pahe|PATOMiEL|PRODJi|PSA|PTNK|RARBG|RDN|Rifftrax|RU4HD|SANTi|Scene|ShieldBearer|STUTTERSHIT|SUNSCREEN|TBS|TEKNO3D|Tigole|TIKO|VISIONPLUSHDR|WAF|WiKi|x0r|YIFY|YTS|Zeus'),
     Multi: createLanguageRegex('multi'),
     'Dual Audio': createLanguageRegex(
       'dual[ .\\-_]?(audio|lang(uage)?|flac|ac3|aac2?)'
