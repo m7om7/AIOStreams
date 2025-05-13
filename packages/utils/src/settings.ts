@@ -290,7 +290,7 @@ export const Settings = cleanEnv(process.env, {
     desc: 'Default regex include pattern',
   }),
   DEFAULT_REGEX_SORT_PATTERNS: multipleRegex({
-    default: undefined,
+    default: .*FLUX.*,
     desc: 'Default regex sort patterns',
   }),
 
