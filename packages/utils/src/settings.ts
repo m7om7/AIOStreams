@@ -213,7 +213,7 @@ export const Settings = cleanEnv(process.env, {
   }),
   DISABLE_TORRENTIO_MESSAGE: str({
     default:
-      'The Torrentio addon has been disabled, please remove it to use this addon.',
+      'The Torrentio addon has been disabled, please remove it to use this addon',
     desc: 'Message to show when the Torrentio addon is disabled',
   }),
 
